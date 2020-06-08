@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "186316960412",
+    "firebase_url": "https://rankingyourmates.firebaseio.com",
+    "project_id": "rankingyourmates",
+    "storage_bucket": "rankingyourmates.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186316960412:android:fad18e0f855a0180557359",
+        "android_client_info": {
+          "package_name": "com.example.ranking_your_mates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186316960412-bl6ej90gcvcqh2f5u3moes54646r7ct9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEXRwZSK97hKo30q5opYOKs4y7Cri6PWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186316960412-bl6ej90gcvcqh2f5u3moes54646r7ct9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
