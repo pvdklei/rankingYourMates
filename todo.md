@@ -1,22 +1,22 @@
 
-- [ ] upload to github
+- [x] upload to github
 
-### Screens
+## Screens
 
-## Auth
+### Auth
 
 - [ ] Remove glitch when signing in
 
-## New Game
+### New Game
 
 - [ ] Add session id to userData after creating game
 - [ ] Session questions screen
 
-## Join Session
+### Join Session
 
 - [ ] Add session id to userData after joining 
 
-## My Rankings 
+### My Rankings 
 
 - [ ] Listview all your rankings
 - [ ] Make session screen  
