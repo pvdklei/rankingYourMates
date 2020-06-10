@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ranking_your_mates/base_widgets/basic_screen.dart';
 import 'package:ranking_your_mates/base_widgets/text_form.dart';
 import 'package:ranking_your_mates/firebase/firestore.dart';
@@ -14,7 +16,7 @@ class _NewGameState extends State<NewGame> {
 
   String _sessionName;
   String _password;
-  dynamic session;
+  dynamic _sessionId;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -23,6 +25,9 @@ class _NewGameState extends State<NewGame> {
 
   @override
   Widget build(BuildContext context) {
+
+    final _user = Provider.of<FirebaseUser>(context);
+
     return Scaffold(
       body: Form(
         key: _formKey,
@@ -35,9 +40,13 @@ class _NewGameState extends State<NewGame> {
               return;
             }
             _formKey.currentState.save();
-            dynamic session = await database.updateSession(
+            dynamic _sessionId = await database.updateSession(
               name: _sessionName,
               password: encrypt(_password),
+            );
+            database.addSessionToUserData(
+              uid: _user.uid,
+              sessionId: _sessionId,
             );
             Navigator.pop(context);
           },

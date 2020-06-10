@@ -6,10 +6,12 @@ class Database {
 
   Future updateSession({name, password}) async {
     try {
-      return await _database.collection('rankSessions').document().setData({
+      DocumentReference docRef = _database.collection('rankSessions').document();
+      await docRef.setData({
         'name': name,
         'password': password,
       });
+      return docRef.documentID;
     } catch(e) {
       print(e.toString());
       return null;
@@ -21,6 +23,18 @@ class Database {
       return await _database.collection('userData').document(uid).setData({
         'name': name,
       });
+    } catch(e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+  Future addSessionToUserData({sessionId, uid}) async {
+    try {
+      await _database
+        .collection('userData').document(uid)
+        .collection('rankSessions').document(sessionId).setData({});
+      return true; 
     } catch(e) {
       print(e.toString());
       return null;
